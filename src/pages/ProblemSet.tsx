@@ -69,7 +69,7 @@ function ProblemSet() {
                     </div>
 
                     <div className="problemSet border-2 overflow-hidden  border-black rounded-xl">
-                        <ProblemSetCodeEditor startCode={tdData[Number(exerciceId)].start_code} />
+                        <ProblemSetCodeEditor startCode={tdData[Number(exerciceId)].start_code} input_={tdData[Number(exerciceId)].input_} output={tdData[Number(exerciceId)].output} />
 
                     </div>
 

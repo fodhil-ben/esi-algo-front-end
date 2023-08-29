@@ -6,18 +6,19 @@ import { javascript } from '@codemirror/lang-javascript';
 import { BsFillPlayFill } from 'react-icons/bs';
 import ResultPopup from './ResultPopup';
 import { useAuthContext } from '../../hooks/useAuthContext';
+import { useSubmitCode } from '../../hooks/useSubmitCode';
 
 
 interface CodeEditorProps {
     startCode: string
+    input_: string
+    output: string
 }
-const ProblemSetCodeEditor: FC<CodeEditorProps> = ({ startCode = '' }) => {
+const ProblemSetCodeEditor: FC<CodeEditorProps> = ({ startCode = '', input_, output }) => {
 
     const { auth } = useAuthContext()
-
-
+    const { submit, message } = useSubmitCode()
     const { problemSetId, exerciceId } = useParams()
-
 
     const [code, setCode] = useState('')
     const [submitCode, setSubmitCode] = useState(false)
@@ -25,7 +26,8 @@ const ProblemSetCodeEditor: FC<CodeEditorProps> = ({ startCode = '' }) => {
     useEffect(() => {
         const userCode = localStorage.getItem(`code-${problemSetId}-${exerciceId}`) || ''
         if (auth) {
-            setCode(userCode ? userCode : startCode)
+            const codeWithoutIrrelevant = startCode.split('// Below Is Irrelevant For YOU.')[0]
+            setCode(userCode ? userCode : codeWithoutIrrelevant)
         } else {
             setCode(startCode)
         }
@@ -37,6 +39,9 @@ const ProblemSetCodeEditor: FC<CodeEditorProps> = ({ startCode = '' }) => {
     }
 
     const handleClick = () => {
+        console.log(startCode)
+        const submitedCode = code + startCode.split('// Below Is Irrelevant For YOU.')[1]
+        submit(submitedCode, input_, output)
         setSubmitCode(true)
     }
 
@@ -51,7 +56,7 @@ const ProblemSetCodeEditor: FC<CodeEditorProps> = ({ startCode = '' }) => {
 
                 <button onClick={handleClick} className='z-10 bg-gray border-[20px] border-secondary bg-secondary-color text-white rounded-full text-3xl md:text-5xl  xl absolute bottom-10 right-14'><BsFillPlayFill></BsFillPlayFill></button>
             </CodeMirror>
-            {submitCode && <ResultPopup code={code} setSubmitCode={setSubmitCode} />}
+            {submitCode && <ResultPopup setSubmitCode={setSubmitCode} message={message} />}
         </div>
     )
 }

@@ -10,7 +10,6 @@ export const useRegister = () => {
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const register = async (username: string, password: string) => {
         setIsLoading(true)
-        setError('')
         try {
             const response = await axios.post(`${BASE_URL}/users/create`, { username, password }) as AxiosResponse
             setMessage(`${response.data.message} Go to Login`)

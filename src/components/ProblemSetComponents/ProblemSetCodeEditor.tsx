@@ -4,8 +4,8 @@ import { FC, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { javascript } from '@codemirror/lang-javascript';
 import { BsFillPlayFill } from 'react-icons/bs';
-import { useAuthContext } from '../../services/providers/AuthContext';
 import ResultPopup from './ResultPopup';
+import { useAuthContext } from '../../hooks/useAuthContext';
 
 
 interface CodeEditorProps {

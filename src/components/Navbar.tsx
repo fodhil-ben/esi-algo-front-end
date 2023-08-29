@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom'
 import { FiMenu } from 'react-icons/fi'
 import { useState } from 'react'
 import SideBar from './SideBar'
-import { useAuthContext } from '../services/providers/AuthContext'
 import { useLogout } from '../hooks/useLogout'
+import { useAuthContext } from '../hooks/useAuthContext'
 
 function Navbar() {
 

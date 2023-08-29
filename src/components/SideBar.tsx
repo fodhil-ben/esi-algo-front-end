@@ -3,9 +3,9 @@ import { MdOutlineEditNote } from 'react-icons/md'
 import { GiCancel } from 'react-icons/gi'
 import { Link } from 'react-router-dom'
 import { FC, } from 'react'
-import { useAuthContext } from '../services/providers/AuthContext'
 import { RxExit } from 'react-icons/rx'
 import { AiOutlineInfoCircle } from 'react-icons/ai'
+import { useAuthContext } from '../hooks/useAuthContext'
 
 interface SideBarProps {
     setSideBar: React.Dispatch<React.SetStateAction<boolean>>

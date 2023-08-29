@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 import { BASE_URL } from "../services/axios-utils/axiosInit";
 import { useState } from "react";
-import { useAuthContext } from "../services/providers/AuthContext";
+import { useAuthContext } from "./useAuthContext";
 
 
 

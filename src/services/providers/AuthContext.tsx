@@ -1,4 +1,4 @@
-import { FC, ReactNode, createContext, useContext, useEffect, useState } from "react";
+import { FC, ReactNode, createContext, useEffect, useState } from "react";
 
 interface ContextProps {
     children: ReactNode
@@ -35,10 +35,3 @@ const AuthContextProvider: FC<ContextProps> = ({ children }) => {
 
 export default AuthContextProvider
 
-export const useAuthContext = () => {
-    const context = useContext(AuthenticationContext)
-    if (!context) {
-        throw Error('useAuthContext must be used inside an AuthContextProvider')
-    }
-    return context
-}    

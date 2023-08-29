@@ -5,7 +5,7 @@ function AboutCard() {
     return (
         <div className='pt-10 pb-4 mt-5 border-t shadow-2xl md:w-150 px-5 md:w-1/3 tracking-wide rounded-3xl'>
             <div className='m-auto rounded-full overflow-hidden w-[200px] lg:w-[300px]'>
-                <img src={'../../assets/MyPicture.webp'} alt="FodhilImage" />
+                <img src={'./assets/MyPicture.webp'} alt="FodhilImage" />
             </div>
             <div className='grid gap-5 mt-5'>
                 <h1 className='text-center font-bold text-3xl'>Fodhil Benhiba</h1>

@@ -9,7 +9,7 @@ import Home from './pages/Home'
 import ProblemSet from './pages/ProblemSet'
 import Contact from './pages/Contact'
 import AboutUs from './pages/AboutUs'
-import { useAuthContext } from './services/providers/AuthContext'
+import { useAuthContext } from './hooks/useAuthContext'
 
 function App() {
 

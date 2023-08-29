@@ -19,7 +19,7 @@ function Welcome() {
                     <Link to='/login' className='bg-secondary-color shadow-xl px-5 py-2 rounded-xl text-white'>Get Started</Link>
                 </div>
             </div>
-            <div className='self-center hidden md:block md:w-1/2'><img src={'./../assets/landing.svg'} alt="landing" /></div>
+            <div className='self-center hidden md:block md:w-1/2'><img src={'./assets/landing.svg'} alt="landing" /></div>
         </div>
     )
 }

@@ -19,7 +19,7 @@ function Navbar() {
                     ? <button onClick={logout} className='bg-secondary-color rounded-xl p-1 px-8 text-white'><Link to='/'>Logout</Link></button>
                     : <div className='flex gap-2 md:gap-5'>
                         <Link to='/login' >Login</Link>
-                        <Link to='/' className='secondray-color'>Get Started</Link>
+                        <Link to='/' className='secondray-color hidden md:block'>Get Started</Link>
                     </div>}
             </div >
             {sideBar && <SideBar setSideBar={setSideBar} />}

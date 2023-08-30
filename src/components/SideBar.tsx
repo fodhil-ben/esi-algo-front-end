@@ -24,7 +24,7 @@ const SideBar: FC<SideBarProps> = ({ setSideBar }) => {
                     <div className='grid gap-3'>
                         <div className='bg-white text-black w-20 h-20 rounded-full text-4xl flex items-center justify-center'>A</div>
                         <div>
-                            <div>{auth ? auth.user : 'Account Name'}</div>
+                            <div>{auth.user ? auth.user : 'Account Name'}</div>
                             <div>Problems Solved: ?</div>
                         </div>
                     </div>

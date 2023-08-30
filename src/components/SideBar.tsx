@@ -35,11 +35,11 @@ const SideBar: FC<SideBarProps> = ({ setSideBar }) => {
                 <div >
 
 
-                    {!auth
+                    {!auth.user
                         ?
                         <>
                             <Link onClick={() => setSideBar(false)} to='/login'><div className='flex px-5 py-3 justify-start items-center gap-5 my-5 hover:bg-gray-100'><div className='text-2xl'><BiLogIn></BiLogIn></div> Login</div></Link>
-                            <Link onClick={() => setSideBar(false)} to='/login'><div className='flex px-5 py-3 justify-start items-center gap-5 hover:bg-gray-100'><div className='text-2xl'><MdOutlineEditNote></MdOutlineEditNote></div> Get Started</div></Link>
+                            <Link onClick={() => setSideBar(false)} to='/about'><div className='flex px-5 py-3 justify-start items-center gap-5 hover:bg-gray-100'><div className='text-2xl'><MdOutlineEditNote></MdOutlineEditNote></div> About Us</div></Link>
                         </>
                         : <>
                             <Link to='/' onClick={() => setSideBar(false)}><div className='flex px-5 py-3 justify-start items-center gap-5 my-5 hover:bg-gray-100'><div className='text-2xl'><RxExit></RxExit></div> Logout</div></Link>

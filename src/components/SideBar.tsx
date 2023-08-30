@@ -22,7 +22,7 @@ const SideBar: FC<SideBarProps> = ({ setSideBar }) => {
             <div className="w-full lg:w-1/6 h-full bg-white absolute top-0 left-0 sideBarShadow">
                 <div className="bg-secondary-color p-5 flex h-1/5 text-white justify-between">
                     <div className='grid gap-3'>
-                        <div className='bg-white text-black w-20 h-20 rounded-full text-4xl flex items-center justify-center'>A</div>
+                        <div className='bg-white text-black w-20 h-20 rounded-full text-4xl flex items-center justify-center'>{auth.user ? auth.user[0].toUpperCase() : '?'}</div>
                         <div>
                             <div>{auth.user ? auth.user : 'Account Name'}</div>
                             <div>Problems Solved: ?</div>
